@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h1>🎮 Selamat Datang, Petualang!</h1>
+    <p class="sub">Game RPG Bloodline Ashaterra v2.2</p>
+    <button onclick="logout()">🔒 Logout</button>
+  </div>
+  <script>
+    function logout() {
+      localStorage.removeItem('login');
+      localStorage.removeItem('guest');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
