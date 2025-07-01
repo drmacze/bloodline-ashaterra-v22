@@ -5,41 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bloodline: Ashaterra</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="app">
-    <div id="login-screen" class="screen active">
-      <h1>🎮 Bloodline: Ashaterra</h1>
-      <p class="tagline">Login seperti PS5 • Gaya RPG Modern</p>
+  <div class="container" id="loginScreen">
+    <h1>🩸 Bloodline: Ashaterra</h1>
+    <p class="subtitle">Enter the realm of legends</p>
 
-      <div class="avatar-list">
-        <div class="avatar selected" data-id="1">🧙</div>
-        <div class="avatar" data-id="2">🧝</div>
-        <div class="avatar" data-id="3">🧛</div>
-        <div class="avatar locked">❌</div>
-        <div class="avatar locked">❌</div>
-      </div>
-
-      <input type="text" id="username" placeholder="Masukkan Nama"/>
-      <input type="password" id="pin" maxlength="6" placeholder="PIN (6 digit)"/>
-      
-      <div class="login-options">
-        <button onclick="login('google')">🔐 Google</button>
-        <button onclick="login('facebook')">📘 Facebook</button>
-        <button onclick="login('apple')">🍎 Apple</button>
-        <button onclick="login('guest')">🎮 Guest Trial</button>
-      </div>
+    <div class="login-options">
+      <button onclick="login('google')">🔵 Login with Google</button>
+      <button onclick="login('facebook')">🔵 Login with Facebook</button>
+      <button onclick="login('apple')">⚫ Login with Apple</button>
+      <button onclick="login('guest')">🕹️ Continue as Guest</button>
     </div>
 
-    <div id="dashboard" class="screen">
-      <h2>Selamat datang, <span id="player-name"></span>!</h2>
-      <p>🎮 Avatar: <span id="player-avatar"></span></p>
-      <p>🔐 ID: <span id="player-id"></span></p>
-      <p>⌛ Status: <span id="player-status"></span></p>
-      <button onclick="logout()">🔄 Logout</button>
+    <div class="pin-section" id="pinSection">
+      <input type="password" id="pinInput" maxlength="6" placeholder="Enter PIN (6 digits)" />
+      <button onclick="submitPIN()">🔓 Unlock</button>
     </div>
+
+    <p id="trialNotice" class="notice hidden">Guest mode valid for 24h only</p>
+  </div>
+
+  <div class="container hidden" id="dashboard">
+    <h2>Welcome, <span id="playerName"></span></h2>
+    <p>🎮 ID: <span id="playerId"></span></p>
+    <p>🧑 Avatar: <span id="playerAvatar"></span></p>
+    <p>🎁 Referral Code: <span id="referralCode"></span></p>
+
+    <button onclick="logout()">🚪 Logout</button>
   </div>
 
   <script src="script.js"></script>
